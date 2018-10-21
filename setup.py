@@ -54,6 +54,7 @@ setup(
         "pytz==2017.3",
         "six==1.11.0",
         "static3==0.7.0",
+        "pykeepass==3.0.2",
     ],
     zip_safe=False,
 )
