@@ -17,6 +17,7 @@ gunicorn = "*"
 hashids = "*"
 "psycopg2" = "*"
 pytz = "*"
+pykeepass = "*"
 
 
 [dev-packages]
