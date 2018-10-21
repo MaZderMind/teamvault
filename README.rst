@@ -39,3 +39,13 @@ Development VM
 
 Go to http://teamvault and log in with the username and password you set.
 To handle code changes, just interrupt the last command with CTRL+C and run it again.
+
+## Import KeePassX-File
+
+    teamvault plumbing import_keepass /path/to/keepassx.kdbx
+    Enter Master-Key: ...
+    Import.........
+    Imported 350 Secrets
+
+See `teamvault plumbing help import_keepass` for all Options
+
