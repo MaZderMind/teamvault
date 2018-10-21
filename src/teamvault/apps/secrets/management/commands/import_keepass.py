@@ -21,7 +21,7 @@ class Command(BaseCommand):
         parser.add_argument('--as-user', type=str, help="Username to use as creator and owner of the new secrets",
                             default="admin")
         parser.add_argument('--keyfile', type=str, help="Path of the Key-File to open the .kdbx-File")
-        parser.add_argument('--exclude', type=str, nargs='+',
+        parser.add_argument('--exclude', type=str, nargs='+', default=[],
                             help="Entries or Groups to exclude. ie --exclude Trash --exclude Super/Secret, "
                                  "can be specified multiple times")
         parser.add_argument('--naming-convention', type=str, default='{title} ({path})',
@@ -40,7 +40,7 @@ class Command(BaseCommand):
             return False
 
         for entry in keepass_file.entries:
-            if self.is_excluded(entry, options.get('exclude', [])):
+            if self.is_excluded(entry, options['exclude']):
                 continue
 
             secret_title = options['naming_convention'].format(**{
