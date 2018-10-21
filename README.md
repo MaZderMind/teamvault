@@ -36,3 +36,11 @@ Install Postgres and create a database and superuser for TeamVault to use.
 	teamvault plumbing createsuperuser
 	teamvault run
 
+## Import KeePassX-File
+
+    teamvault plumbing import_keepass /path/to/keepassx.kdbx
+    KeePass Master-Password:
+    imported Some-Entry (Some/Group)
+    imported Another-Entry (Some/Group)
+
+See `teamvault plumbing help import_keepass` for all Options
