@@ -60,7 +60,8 @@ class Command(BaseCommand):
             secret.allowed_users.set([user])
             secret.save()
 
-            secret.set_data(user, entry.password, skip_access_check=True)
+            if entry.password is not None and len(entry.password) > 0:
+                secret.set_data(user, entry.password)
 
             self.stdout.write(self.style.SUCCESS("imported %s" % secret_title))
 
